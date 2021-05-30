@@ -24,6 +24,12 @@ function number2sound(nTextFromDoc) {
     //       3,  เสียงของตัวเลขเมื่ออยู่หลักพัน
     //       4,  เสียงของตัวเลขเมื่ออยู่หลักหมื่น
     //       5 ] เสียงของตัวเลขเมื่ออยู่หลักแสน 
+    /*
+
+          a['x1','x2','x3'] -->  a[0]==> 'x1'   a[1]==>'x2'
+          b[ p['p1','p2'], q['q1','q2'] ]   --> b[0][1]==>'p2'
+
+    */
     let numberSound = [
         [ "", "เอ็ด", "สอง", "สาม", "สี่", "ห้า", "หก", "เจ็ด", "แปด", "เก้า", "เสียงตัวเลขหลักหน่วย"],
         [ "",   "",   "ยี่",  "สาม", "สี่", "ห้า", "หก", "เจ็ด", "แปด", "เก้า", "เสียงตัวเลขหลักสิบ" ],
@@ -52,7 +58,8 @@ function number2sound(nTextFromDoc) {
     }
 
     if(nTextFromDoc.length === 1){   // เป็นตัวเลขหลักเดียว
-        return nSoundFromDoc = numberSoundCol1[nTextFromDoc];
+        return numberSoundCol1[nTextFromDoc];
+        //return nSoundFromDoc = numberSoundCol1[nTextFromDoc];
     }
 
     nText = clearZero(nTextFromDoc);
